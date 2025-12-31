@@ -1,0 +1,62 @@
+<app-client-header></app-client-header>
+<!--  -->
+<section
+    class="bg-[#FFFFFFB2] max-w-[1152px] m-auto md:px-[24px] px-[15px] md:pt-[24px] pt-[15px] mt-[24px] border rounded-[8px] border-[#DCE5E0]">
+    <div class="flex items-start">
+        <a routerLink="/"
+            class="w-[36px] h-[36px] bg-[#FFFFFF] border border-[#DEE3E9] rounded-[6px] flex items-center justify-center cursor-pointer">
+            <img src="/assets/images/left.png" alt="" srcset="">
+        </a>
+        <div class="ml-[12px]">
+            <h2 class="font-[600] text-[18px] font-[600] text-[#1B3226]">Profile</h2>
+            <p class="text-[#577566] text-[14px] font-[400] pt-[4px]">Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit.
+            </p>
+        </div>
+    </div>
+    <!-- TABS -->
+    <div class="grid grid-cols-3 gap-[4px] pt-[24px]">
+        <button (click)="setTab(0)" [ngClass]="
+      activeTab === 0
+        ? 'bg-[#70A987] text-white'
+        : 'text-[#1B3226]'
+    " class="py-[10px] rounded-tl-[6px] rounded-tr-[6px] cursor-pointer">
+            Profile Information
+        </button>
+
+        <button (click)="setTab(1)" [ngClass]="
+      activeTab === 1
+        ? 'bg-[#70A987] text-white'
+        : 'text-[#1B3226]'
+    " class="py-[10px] rounded-tl-[6px] rounded-tr-[6px] cursor-pointer">
+            Security Settings
+        </button>
+
+        <button (click)="setTab(2)" [ngClass]="
+      activeTab === 2
+        ? 'bg-[#70A987] text-white'
+        : 'text-[#1B3226]'
+    " class="py-[10px] rounded-tl-[6px] rounded-tr-[6px] cursor-pointer">
+            Notification Settings
+        </button>
+    </div>
+
+</section>
+
+<div class="tab-content max-w-[1152px] m-auto mt-[24px]">
+    <div *ngIf="activeTab === 0">
+        <app-client-profile-information></app-client-profile-information>
+    </div>
+
+    <div *ngIf="activeTab === 1">
+        <!-- TAB 2 -->
+        <p class="text-lg font-semibold">Security Settings</p>
+        Password & security content
+    </div>
+
+    <div *ngIf="activeTab === 2">
+        <!-- TAB 3 -->
+        <p class="text-lg font-semibold">Notification Settings</p>
+        Notification preferences
+    </div>
+</div>
